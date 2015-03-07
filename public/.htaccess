@@ -1,0 +1,19 @@
+# Some hosts may require you to use the `RewriteBase` directive.
+# If you need to use the `RewriteBase` directive, it should be the
+# absolute physical path to the directory that contains this htaccess file.
+#
+# RewriteBase /
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
+
+#<IfModule mod_rewrite.c> 
+#	Options +FollowSymLinks
+#	RewriteEngine On
+#	#不显示index.php
+#	RewriteCond %{REQUEST_FILENAME} !-d
+#	RewriteCond %{REQUEST_FILENAME} !-f
+#	#如果是这些后缀的文件，就直接访问文件，不进行Rewrite
+#	RewriteCond %{REQUEST_URI} !^.*(\.css|\.js|\.gif|\.png|\.jpg|\.jpeg|\.swf)$ 
+#	RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+#</IfModule>
